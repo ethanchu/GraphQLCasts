@@ -5,7 +5,7 @@ const schema = require('./schema/schema');
 const app = express();
 
 app.use('/graphql', expressGraphQL({// connect the express and GraphQL as middleware
-  schema,
+  schema,// connect to schema to express request
   graphiql: true
 }));
 
