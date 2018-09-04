@@ -38,7 +38,7 @@ class LoginForm extends Component {
         <h3>Login</h3>
         <AuthForm
           errors={this.state.errors}
-          onSubmit={this.onSubmit.bind(this)}
+          onSubmit={this.onSubmit.bind(this)}// call back function to pass into AuthForm.js, "onSubmit" is a props in here
         />
       </div>
     );

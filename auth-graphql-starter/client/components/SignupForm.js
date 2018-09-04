@@ -12,7 +12,7 @@ class SignupForm extends Component {
     this.state = { errors: [] };
   }
 
-  componentWillUpdate(nextProps) {
+  componentWillUpdate(nextProps) {// life cycle method will call automatically
     if (nextProps.data.user && !this.props.data.user) {
       hashHistory.push('/dashboard');
     }
@@ -41,6 +41,6 @@ class SignupForm extends Component {
   }
 }
 
-export default graphql(query)(
+export default graphql(query)( // anyorder for query and mutation in graphql
   graphql(mutation)(SignupForm)
 );

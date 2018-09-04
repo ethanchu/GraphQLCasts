@@ -7,7 +7,7 @@ export default (WrappedComponent) => {
   class RequireAuth extends Component {
     componentWillUpdate(nextProps) {
       if (!nextProps.data.loading && !nextProps.data.user) {
-        hashHistory.push('/login');
+        hashHistory.push('/login');// redirect to other page
       }
     }
 
