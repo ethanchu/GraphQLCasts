@@ -6,7 +6,7 @@ class LyricList extends Component {
   onLike(id, likes) {
     this.props.mutate({
       variables: { id },
-      optimisticResponse: {
+      optimisticResponse: {// predict the value in frontend ahead, if wrong, will update later by re-fetch from backend
         __typename: 'Mutation',
         likeLyric: {
           id,

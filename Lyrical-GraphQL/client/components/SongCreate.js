@@ -12,12 +12,12 @@ class SongCreate extends Component {
   }
 
   onSubmit(event) {
-    event.preventDefault();
+    event.preventDefault();// prevent the browser to submit by themseleves
 
-    this.props.mutate({
+    this.props.mutate({// get the data from mutate, not props(props for query)
       variables: { title: this.state.title },
-      refetchQueries: [{ query }]
-    }).then(() => hashHistory.push('/'));
+      refetchQueries: [{ query }] // re-run the query for fetchSongsList
+    }).then(() => hashHistory.push('/'));// use the returned promise and redirect by then. If error use .catch(() => )
   }
 
   render() {
@@ -28,8 +28,8 @@ class SongCreate extends Component {
         <form onSubmit={this.onSubmit.bind(this)}>
           <label>Song Title:</label>
           <input
-            onChange={event => this.setState({ title: event.target.value })}
-            value={this.state.title}
+            onChange={event => this.setState({ title: event.target.value })}// update data in react
+            value={this.state.title}// based on state update, refrech the date from react state
           />
         </form>
       </div>
@@ -38,7 +38,7 @@ class SongCreate extends Component {
 }
 
 const mutation = gql`
-  mutation AddSong($title: String){
+  mutation AddSong($title: String){ # Creat a function to pass argu from react to graphql
     addSong(title: $title) {
       title
     }

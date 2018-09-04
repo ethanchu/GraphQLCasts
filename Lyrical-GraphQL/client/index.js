@@ -1,9 +1,9 @@
-import './style/style.css';
+import './style/style.css';// import the css part
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import ApolloClient from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from 'react-apollo';// GLUE LAYER
 
 import App from './components/App';
 import SongList from './components/SongList';
@@ -11,7 +11,7 @@ import SongCreate from './components/SongCreate';
 import SongDetail from './components/SongDetail';
 
 const client = new ApolloClient({
-  dataIdFromObject: o => o.id
+  dataIdFromObject: o => o.id // asume every object has uniqueID
 });
 
 const Root = () => {

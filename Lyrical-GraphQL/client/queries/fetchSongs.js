@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export default gql`
+export default gql`# define the query
   {
     songs {
       id

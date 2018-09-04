@@ -16,12 +16,12 @@ class SongDetail extends Component {
         <Link to="/">Back</Link>
         <h3>{song.title}</h3>
         <LyricList lyrics={song.lyrics} />
-        <LyricCreate songId={this.props.params.id} />
+        <LyricCreate songId={this.props.params.id} /> // pass down the id into children component
       </div>
     );
   }
 }
 
 export default graphql(fetchSong, {
-  options: (props) => { return { variables: { id: props.params.id } } }
+  options: (props) => { return { variables: { id: props.params.id } } }// graphql get props and fetch into SongDetail
 })(SongDetail);

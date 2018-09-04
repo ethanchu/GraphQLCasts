@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-import { Link } from 'react-router';
+import gql from 'graphql-tag';// graphql library to format the query part
+import { graphql } from 'react-apollo';//bond the query from apollo
+import { Link } from 'react-router';// react-rounter to redirect the page
 import query from '../queries/fetchSongs';
 
 class SongList extends Component {
@@ -29,7 +29,7 @@ class SongList extends Component {
   }
 
   render() {
-    if (this.props.data.loading) { return <div>Loading...</div>; }
+    if (this.props.data.loading) { return <div>Loading...</div>; }// wait for aync fetch date from GraphQL(importance!!!!)
 
     return (
       <div>

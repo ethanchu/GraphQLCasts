@@ -6,11 +6,11 @@ class LyricCreate extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { content: '' };
+    this.state = { content: '' }; // creat content for mutator to add lynic
   }
 
   onSubmit(event) {
-    event.preventDefault();
+    event.preventDefault();// prevent the browser to submit by themseleves
 
     this.props.mutate({
       variables: {
@@ -25,8 +25,8 @@ class LyricCreate extends Component {
       <form onSubmit={this.onSubmit.bind(this)}>
         <label>Add a Lyric</label>
         <input
-          value={this.state.content}
-          onChange={event => this.setState({ content: event.target.value })}
+          value={this.state.content}// show data from current state
+          onChange={event => this.setState({ content: event.target.value })} // update the typing info into state
         />
       </form>
     );
@@ -36,7 +36,7 @@ class LyricCreate extends Component {
 const mutation = gql`
   mutation AddLyricToSong($content: String, $songId: ID) {
     addLyricToSong(content: $content, songId: $songId) {
-      id
+      id # id already register in ApolloClient, when update, will refetch the page
       lyrics {
         id
         content
