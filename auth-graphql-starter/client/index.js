@@ -10,7 +10,7 @@ import SignupForm from './components/SignupForm';
 import Dashboard from './components/Dashboard';
 import requireAuth from './components/requireAuth';
 
-const networkInterface = createNetworkInterface({
+const networkInterface = createNetworkInterface({// SEND COOKIES TO GraphQL
   uri: '/graphql',
   opts: {
     credentials: 'same-origin'
